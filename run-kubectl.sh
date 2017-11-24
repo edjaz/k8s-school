@@ -59,14 +59,14 @@ fi
 
 if [ -z "${CMD}" ]
 then
-	BASH_OPTS="-it --volume "$DIR"/kubectl/admin:/root/admin-dev"
+	BASH_OPTS="-it --volume "$DIR"/kubectl/scripts:/root/scripts"
     CMD="bash"
 fi
 
 # Launch container
 #
 # Use host network to easily publish k8s dashboard
-IMAGE=qserv/kubectl
+IMAGE=k8sschool/kubectl
 docker pull "$IMAGE"
 docker run $BASH_OPTS --net=host \
     --rm \

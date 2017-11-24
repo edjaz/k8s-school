@@ -9,7 +9,7 @@ set -e
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
-IMAGE="qserv/kubectl:latest"
+IMAGE="k8sschool/kubectl:latest"
 
 echo $DIR
 
