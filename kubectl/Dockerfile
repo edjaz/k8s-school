@@ -10,10 +10,18 @@ RUN apt-get -y update && \
     apt-get -y upgrade && \
     apt-get -y clean
 
-RUN apt-get -y install curl bash-completion git jq mariadb-client \
+RUN apt-get -y install curl bash-completion git gnupg jq \
+    lsb-release \
     openssh-client parallel \
-    python3 python3-yaml unzip vim wget && \
-    ln -s /usr/bin/python3 /usr/bin/python
+    unzip vim wget
+
+# Install Google cloud SDK
+RUN export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)" && \
+    echo "deb http://packages.cloud.google.com/apt $CLOUD_SDK_REPO main" \
+    | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && \
+    curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | \
+    apt-key add - && \
+    apt-get -y update && apt-get -y install google-cloud-sdk
 
 # Install helm
 ENV HELM_VERSION 2.7.0
