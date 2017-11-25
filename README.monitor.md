@@ -25,10 +25,8 @@ kubectl -n kube-system describe secret default-token-wjck5
 
 ## Installation procedure
 
-See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/docs/KOPSonAWS.md
-
 ```
-cd admin-dev 
+cd scripts 
 git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git prometheus-operator-temp;
 cd prometheus-operator-temp/contrib/kube-prometheus
 ./hack/cluster-monitoring/deploy
@@ -49,14 +47,12 @@ kubectl delete svc -n monitoring alertmanager-operated
 
 ## Via a k8s node
 
-Prometheus services are available on each k8s nodes. Example below use node
-`freel_node_1` with ip `ip_freel_node_1`
+Prometheus services are available on each k8s nodes, but not master.
 
 ```
-docker exec -it kube-node-1 bash
-ssh -NR 30902:localhost:30902 fjammes@clrinfopc04
-# then, on the workstation, access Grafana UI
-firefox http://localhost:30903/
+# Get docker node ip
+IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kube-node-1)
+firefox http://$IP:30903/
 # Use ports number 30900 and 30902 for Prometheus and AlertManager UIs
 ```
 
@@ -68,7 +64,7 @@ Current documentation is based on https://github.com/kubernetes/heapster/blob/ma
 (note that datasource InfluxDb is already created in grafana)
 
 ```
-cd admin-dev 
+cd scripts 
 git clone --single-branch --depth=1 https://github.com/kubernetes/heapster.git
 cd heapster/
 ```
@@ -82,16 +78,7 @@ kubectl create -f deploy/kube-config/rbac/heapster-rbac.yaml
 
 ## Access grafana web application
 
-```
-# If not already done, start proxy
-kubectl proxy
-
-```
-
-1. On your docker host open `http://localhost:8001/api/v1/proxy/namespaces/kube-system/services/monitoring-grafana/?orgId=1`
-2. Open the side menu by clicking the Grafana icon in the top header.
-3. In the side menu you should find a link named `Sign in`, log in using 'admin', 'admin' credentials.
-4. In the side menu named `Home`, choose `Cluster` or `Pods` to get graphs.
+See heapster patch, and use endpoints because of dind setup.
 
 # Display kube-state-metrics
 
@@ -105,9 +92,8 @@ Based on https://github.com/kubernetes/kube-state-metrics
 
 # Display metrics
 
-On k8s master:
 ```
-docker exec -it kube-master bash
-curl localhost:8080/metrics
+IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kube-master)
+firefox $IP:8080/metrics
 ```
 

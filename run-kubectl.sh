@@ -9,7 +9,7 @@ set -x
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
-KUBECONFIG="$DIR"   
+KUBECONFIG="$DIR"/dot-kube
 
 usage() {
     cat << EOD
@@ -39,7 +39,7 @@ done
 shift "$((OPTIND-1))"
 
 if [ $# -ne 0 ] ; then
-	usage
+    usage
     exit 2
 fi
 
@@ -47,7 +47,7 @@ fi
 case "$KUBECONFIG" in
     /*) ;;
     *) echo "expect absolute path" ; exit 2 ;;
-esac      
+esac
 
 # strip trailing slash
 KUBECONFIG=$(echo $KUBECONFIG | sed 's%\(.*[^/]\)/*%\1%')
@@ -59,7 +59,7 @@ fi
 
 if [ -z "${CMD}" ]
 then
-	BASH_OPTS="-it --volume "$DIR"/kubectl/scripts:/root/scripts"
+    BASH_OPTS="-it --volume "$DIR"/kubectl/scripts:/root/scripts"
     CMD="bash"
 fi
 
@@ -70,5 +70,5 @@ IMAGE=k8sschool/kubectl
 docker pull "$IMAGE"
 docker run $BASH_OPTS --net=host \
     --rm \
-    --volume "$KUBECONFIG"/kubeconfig:/root/.kube/config \
+    --volume "$KUBECONFIG":/root/.kube \
     "$IMAGE" $CMD

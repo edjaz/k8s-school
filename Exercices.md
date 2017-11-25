@@ -6,11 +6,11 @@
 wget https://cdn.rawgit.com/Mirantis/kubeadm-dind-cluster/master/fixed/dind-cluster-v1.8.sh
 
 # Get configuration file from dind cluster
-$ docker cp kube-master:/etc/kubernetes/admin.conf  ~/src/k8s-school/kubeconfig
+$ docker cp kube-master:/etc/kubernetes/admin.conf  ~/src/k8s-school/dot-kube/dindconfig
+$ ln -sf ~/src/k8s-school/dot-kube/dindconfig ~/src/k8s-school/dot-kube/config
 
-# Get examples
-$ cd kubectl/scripts
-$ git clone https://github.com/kubernetes-up-and-running/examples.git
+# GCE users
+$ gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project backup-155022
 ```
 
 # Exercices
