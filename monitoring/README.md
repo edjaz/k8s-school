@@ -27,8 +27,8 @@ kubectl -n kube-system describe secret default-token-wjck5
 
 ```
 cd scripts 
-git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git prometheus-operator-temp;
-cd prometheus-operator-temp/contrib/kube-prometheus
+git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git;
+cd prometheus-operator/contrib/kube-prometheus
 ./hack/cluster-monitoring/deploy
 ```
 
