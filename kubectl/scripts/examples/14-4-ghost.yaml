@@ -18,8 +18,9 @@ spec:
         command:
         - sh
         - -c
-        - cp /ghost-config/config.js /var/lib/ghost/config.js
-          && /entrypoint.sh npm start
+        - cp /ghost-config/config.js /var/lib/ghost/config.js &&
+          cp /var/lib/ghost/config.development.json /var/lib/ghost/package.json &&
+          node current/index.js 
         volumeMounts:
         - mountPath: /ghost-config
           name: config
