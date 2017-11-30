@@ -1,5 +1,12 @@
 # k8s-school
 
+# Slide
+
+All material are [here](https://drive.google.com/open?id=0B-VJpOQeezDjZktuTnlEMEpGMUU)
+
+# Exercices
+
+## Pre-requisites
 
 ```shell
 # Install dind cluster
@@ -12,8 +19,6 @@ $ ln -sf ~/src/k8s-school/dot-kube/dindconfig ~/src/k8s-school/dot-kube/config
 # GCE users
 $ gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project backup-155022
 ```
-
-# Exercices
 
 ## Install dashboard
 
