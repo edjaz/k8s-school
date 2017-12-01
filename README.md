@@ -1,8 +1,8 @@
 # k8s-school
 
-# Slide
+# Slides
 
-All material are [here](https://drive.google.com/open?id=0B-VJpOQeezDjZktuTnlEMEpGMUU)
+All materials are [here](https://drive.google.com/open?id=0B-VJpOQeezDjZktuTnlEMEpGMUU)
 
 # Exercices
 
