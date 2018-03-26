@@ -37,3 +37,5 @@ http://localhost:8080/api/v1/namespaces/kube-system/services/kubernetes-dashboar
 https://github.com/kubernetes/examples/blob/master/README.md
 
 ## Install Prometheus
+
+See [here](./README.monitor.md)
