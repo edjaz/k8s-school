@@ -17,12 +17,19 @@ https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
 # Install dind cluster
 wget https://cdn.rawgit.com/Mirantis/kubeadm-dind-cluster/master/fixed/dind-cluster-v1.9.sh
 
+./dind-cluster-v1.9.sh up
+
 # Get configuration file from dind cluster
 docker cp kube-master:/etc/kubernetes/admin.conf  ~/src/k8s-school/dot-kube/dindconfig
 ln -sf ~/src/k8s-school/dot-kube/dindconfig ~/src/k8s-school/dot-kube/config
+
+# Run kubectl client inside container and play with k8s
+./run-kubectl.sh
 ```
 
 ## Play with dashboard
+
+http://localhost:8080/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy
 
 ## Play with examples
 
