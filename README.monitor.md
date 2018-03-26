@@ -36,7 +36,7 @@ kubectl delete svc -n monitoring alertmanager-operated
 
 ```shell
 # Get node ip
-# WARN: with dind-cluster grafana is not available in kube-node-1 for unknown reason
+# WARN: with dind-cluster grafana is not available in kube-node-1 (dind seems to be overloaded by grafana) 
 IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' kube-node-2)
 
 # access services at  http://$IP:30902 (grafana), and 30903, 30900
