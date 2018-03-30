@@ -14,6 +14,11 @@ Depending on your linux distribution version, you might have to upgrade to docke
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
 
 ```shell
+sudo apt-get install git docker.io vim
+
+# then add current user to docker group
+sudo vim /etc/group
+
 # Install dind cluster
 wget https://cdn.rawgit.com/Mirantis/kubeadm-dind-cluster/master/fixed/dind-cluster-v1.9.sh
 
@@ -32,6 +37,17 @@ ln -sf ~/src/k8s-school/dot-kube/dindconfig ~/src/k8s-school/dot-kube/config
 http://localhost:8080/api/v1/namespaces/kube-system/services/kubernetes-dashboard:/proxy
 
 ## Play with examples
+
+```shell
+git clone https://github.com/fjammes/k8s-school
+cd k8s-school
+# Retrieve examples
+./kubectl/scripts/clone-book-examples.sh
+# Run kubectl client in a Docker container
+./run-kubectl.sh
+cd ./scripts/
+# Play with kubectl and yaml files :-)
+```
 
 ## Install 2 example apps
 https://github.com/kubernetes/examples/blob/master/README.md

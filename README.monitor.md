@@ -15,7 +15,6 @@ git clone --single-branch --depth=1 -b master https://github.com/coreos/promethe
 # In kubectl container
 cd scripts/prometheus-operator-temp/contrib/kube-prometheus/
 ./hack/cluster-monitoring/deploy
-kubectl -n kube-system create -f manifests/k8s/self-hosted/
 ```
 
 ## Removal procedure
