@@ -24,7 +24,7 @@ helm install coreos/kube-prometheus --name kube-prometheus --set global.rbacEnab
 Then follow documentation:
 https://itnext.io/kubernetes-monitoring-with-prometheus-in-15-minutes-8e54d1de2e13
 
-## Enable access to NodePort
+## Enable access to NodePort via ingress
 
 ```shell
 gcloud config set project MYPROJECT
