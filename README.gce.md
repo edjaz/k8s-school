@@ -15,8 +15,7 @@ kubectl create clusterrolebinding myname-cluster-admin-binding --clusterrole=clu
 
 ```shell
 gcloud info | grep Account
-grant cluster-admin youraccount@gcloud
-kubectl create clusterrolebinding myname-cluster-admin-binding
---clusterrole=cluster-admin --user=youraccount@gcloud
+# Grant role cluster-admin to youraccount@gcloud
+kubectl create clusterrolebinding MYNAME-cluster-admin-binding --clusterrole=cluster-admin --user=youraccount@gcloud
 ```
 
