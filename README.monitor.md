@@ -5,7 +5,7 @@ k8s monitoring
 
 ## Installation procedure
 
-Read https://github.com/fjammes/k8s-school/README.gce.md for installing on GCE/GKE
+Read https://github.com/fjammes/k8s-school/blob/master/README.gce.md for installing on GCE/GKE
 
 See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/docs/KOPSonAWS.md
 
