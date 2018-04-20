@@ -13,9 +13,14 @@ kubectl create clusterrolebinding myname-cluster-admin-binding --clusterrole=clu
 
 ## Pre-requisite for premetheus-operator
 
+
+## GCE: 
+
 ```shell
-gcloud info | grep Account
-# Grant role cluster-admin to youraccount@gcloud
-kubectl create clusterrolebinding MYNAME-cluster-admin-binding --clusterrole=cluster-admin --user=youraccount@gcloud
-```
+kubectl create serviceaccount --namespace kube-system tiller
+kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}'      
+helm init --service-account tiller --upgrade
+helm install coreos/prometheus-operator --name prometheus-operator --namespace monitoring
+```shell
 
