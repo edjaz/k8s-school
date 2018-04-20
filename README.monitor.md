@@ -31,7 +31,7 @@ kubectl delete svc -n monitoring alertmanager-operated
 
 **NOT RECOMMENDED: Prometheus and Grafana Web UIs do not work well using proxy.**
 
-## Via a k8s node
+## dind-cluster: via a k8s node
 
 ```shell
 # Get node ip
