@@ -7,10 +7,7 @@ Create a k8s cluster in GKE gui, then authenticate:
 $ gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project backup-155022
 ```
 
-## Pre-requisite for premetheus-operator
-
-
-## GCE: 
+# Install premetheus-operator 
 
 ```shell
 kubectl create serviceaccount --namespace kube-system tiller
