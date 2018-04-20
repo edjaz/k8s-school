@@ -21,6 +21,9 @@ helm install coreos/prometheus-operator --name prometheus-operator --namespace m
 helm install coreos/kube-prometheus --name kube-prometheus --set global.rbacEnable=true --namespace monitoring
 ```
 
+Then follow documentation:
+https://itnext.io/kubernetes-monitoring-with-prometheus-in-15-minutes-8e54d1de2e13
+
 ## Enable access to NodePort
 
 ```shell
