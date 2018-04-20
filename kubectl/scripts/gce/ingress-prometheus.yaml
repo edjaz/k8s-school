@@ -1,0 +1,9 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+  namespace: monitoring
+spec:
+  backend:
+    serviceName: kube-prometheus-grafana  
+    servicePort: 30902
