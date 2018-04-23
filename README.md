@@ -4,6 +4,10 @@
 
 All materials are [here](https://drive.google.com/open?id=0B-VJpOQeezDjZktuTnlEMEpGMUU)
 
+# Solutions for installing kubernetes
+
+https://kubernetes.io/docs/setup/pick-right-solution/#bare-metal
+
 # Exercices
 
 ## Pre-requisites
