@@ -36,7 +36,7 @@ https://itnext.io/kubernetes-monitoring-with-prometheus-in-15-minutes-8e54d1de2e
 helm del --purge kube-prometheus
 helm install coreos/kube-prometheus --name kube-prometheus --set grafana.service.type=NodePort --namespace monitoring
 gcloud config set project MYPROJECT
-gcloud compute firewall-rules create prometheus --allow tcp:30900,tcp:30902,tcp:30903
+gcloud compute firewall-rules create prometheus --allow tcp:30902
 # Get public IPs of the nodes
 gcloud compute instances list
 ```
