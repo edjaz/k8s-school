@@ -14,9 +14,9 @@ Depending on your linux distribution version, you might have to upgrade to docke
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
 
 ```shell
-sudo apt-get install git docker.io vim
+sudo apt-get install curl docker.io git vim
 
-# then add current user to docker group
+# then add current user to docker group and restart gnome session
 sudo vim /etc/group
 
 # Install dind cluster
