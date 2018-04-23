@@ -1,6 +1,6 @@
 # Google cloud platform
 
-Create a k8s cluster in GKE gui, then authenticate:
+Create a k8s cluster in GKE gui (use k8s version: 1.8.8-gke.0), then authenticate:
 
 ```shell
 # GCE users
