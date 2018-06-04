@@ -8,7 +8,9 @@ set -e
 set -x
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
-. "$DIR/../env-cluster.sh"
+if [ -z "$ORCHESTRATOR" ]; then
+    >&2 echo "ERROR: export ORCHESTRATOR env variable"
+fi
 
 K8S_PORT=6443
 
@@ -22,4 +24,4 @@ do
 done
 
 echo "INFO: open ssh tunnel to access kubernetes master"
-ssh $SSH_CFG_OPT "$ORCHESTRATOR" -N -L $K8S_PORT:localhost:$K8S_PORT &
+ssh "$ORCHESTRATOR" -N -L $K8S_PORT:localhost:$K8S_PORT &

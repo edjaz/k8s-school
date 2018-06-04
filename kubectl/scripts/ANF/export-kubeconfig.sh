@@ -8,9 +8,8 @@ set -e
 set -x
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
-. "$DIR/../env-cluster.sh"
 
-KUBECONFIG="$HOME/.lsst/qserv-cluster/kubeconfig"
+KUBECONFIG="$HOME/.kube/config"
 
 usage() {
     cat << EOD
@@ -40,6 +39,10 @@ if [ $# -ne 0 ] ; then
     exit 2
 fi
 
+if [ -z "$ORCHESTRATOR" ]; then
+    >&2 echo "ERROR: export ORCHESTRATOR env variable"
+fi
+
 case "$KUBECONFIG" in
     /*) ;;
     *) echo "expect absolute path" ; exit 2 ;;
@@ -49,13 +52,11 @@ esac
 KUBECONFIG=$(echo $KUBECONFIG | sed 's%\(.*[^/]\)/*%\1%')
 
 echo "WARN: require sudo access to $ORCHESTRATOR"
-ssh $SSH_CFG_OPT "$ORCHESTRATOR" 'sudo cat /etc/kubernetes/admin.conf' \
+ssh "$ORCHESTRATOR" 'sudo cat /etc/kubernetes/admin.conf' \
 	> "$KUBECONFIG"
 
 # Hack for Openstack (use ssh tunnel)
-if [ "$OPENSTACK" = true ]; then
-    "$DIR/ssh-tunnel.sh"
-    sed -i -- 's,server: https://.*\(:[0-9]*\),server: https://localhost\1,g' \
-        "$KUBECONFIG"
-fi
+"$DIR/ssh-tunnel.sh"
+sed -i -- 's,server: https://.*\(:[0-9]*\),server: https://localhost\1,g' \
+    "$KUBECONFIG"
 echo "SUCCESS: $KUBECONFIG created"

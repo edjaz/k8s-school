@@ -11,6 +11,8 @@ export CLOUD=petasky
 ./setup-cfg.sh
 ```
 
+Then edit ORCHESTRATOR, WORKER_FIRST_ID, WORKER_LAST_ID in `k8s-school/dot-kube/env-infrastructure.sh`.
+
 # Launch kubectl client
 
 Get a bash prompt inside docker image with kubectl client:
@@ -24,7 +26,7 @@ Get a bash prompt inside docker image with kubectl client:
 ```shell
 # Inside kubectl docker image
 # replace kube-node-xxx with your k8s master hostname
-ssh -F /root/.kube/ssh_config kube-node-xxx
+ssh kube-node-xxx
 
 # Create k8s master
 # apiserver-cert-extra-sans option is a hack for ssh tunnel

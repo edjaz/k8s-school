@@ -8,6 +8,7 @@ fi
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 # Create configuration
-mkdir -p ../dot-kube
-cp "$DIR/config.$CLOUD"/ssh_config ../dot-ssh
-cp "$DIR/config.$CLOUD"/env-infrastructure.sh ../dot-kube
+SSH_CFG="$DIR../dot-ssh"
+KUBE_CFG="$DIR../dot-kube"
+mkdir -p "$SSH_CFG" "$KUBE_CFG"
+cp "$DIR/config.$CLOUD"/ssh_config "$SSH_CFG"
