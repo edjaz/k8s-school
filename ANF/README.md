@@ -1,17 +1,22 @@
 # Download keys
 
-https://drive.uca.fr/d/54734d97770640889165/
+At https://drive.uca.fr/d/54734d97770640889165/
 
-and copy them to `k8s-school/dot-ssh`
+Then run:
+
+```shell
+mkdir -p k8s-school/dot-ssh
+cd k8s-school/dot-ssh
+# Copy key here
+chmod 600 id_rsa_anf
+```
 
 # Setup ssh configuration
 
 ```shell
 export CLOUD=petasky
-./setup-cfg.sh
+./k8s-school/ANF/setup-cfg.sh
 ```
-
-Then edit ORCHESTRATOR, WORKER_FIRST_ID, WORKER_LAST_ID in `k8s-school/dot-kube/env-infrastructure.sh`.
 
 # Launch kubectl client
 
@@ -25,8 +30,12 @@ Get a bash prompt inside docker image with kubectl client:
 
 ```shell
 # Inside kubectl docker image
+# Define k8s-orchestrator
 # replace kube-node-xxx with your k8s master hostname
-ssh kube-node-xxx
+export ORCHESTRATOR=kube-node-xxx
+
+# Log in orchestrator
+ssh $ORCHESTRATOR
 
 # Create k8s master
 # apiserver-cert-extra-sans option is a hack for ssh tunnel
@@ -37,9 +46,12 @@ kubeadm init --apiserver-cert-extra-sans=localhost
 # Install pod network
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
 
+# Log out orchestrator
+exit
+
 # Join a node
 # replace kube-node-yyy with your k8s node hostname
-ssh -F /root/.kube/ssh_config kube-node-yyy
+ssh kube-node-yyy
 kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
 
 ```
