@@ -59,7 +59,7 @@ fi
 
 if [ -z "${CMD}" ]
 then
-    BASH_OPTS="-it --volume "$DIR"/kubectl/scripts:/home/kube/scripts"
+    BASH_OPTS="-it --volume "$DIR"/kubectl/scripts:/root/scripts"
     CMD="bash"
 fi
 
@@ -70,7 +70,6 @@ IMAGE=k8sschool/kubectl
 docker pull "$IMAGE"
 docker run $BASH_OPTS --net=host \
     --rm \
-    --user kube:$(id -u):$(id -g) \
-    --volume "$DIR/dot-ssh":/home/kube/.ssh \
-    --volume "$KUBECONFIG":/home/kube/.kube \
+    --volume "$DIR/dot-ssh":/root/.ssh \
+    --volume "$KUBECONFIG":/root/.kube \
     "$IMAGE" $CMD

@@ -35,6 +35,9 @@ Get a bash prompt inside docker image with kubectl client:
 # replace kube-node-xxx with your k8s master hostname
 export ORCHESTRATOR=kube-node-xxx
 
+# Grant access to ssh keys
+chown -R root:root $HOME/.ssh
+
 # Log in orchestrator
 ssh $ORCHESTRATOR
 

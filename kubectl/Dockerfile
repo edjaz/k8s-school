@@ -39,9 +39,7 @@ RUN wget -O /usr/local/bin/kubectl \
     https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x /usr/local/bin/kubectl
 
-RUN useradd -ms /bin/bash kube
-USER kube
-WORKDIR /home/kube
+WORKDIR /root
 
 # Install kubectl completion
 # setup autocomplete in bash, bash-completion package should be installed first.
