@@ -14,6 +14,7 @@ chmod 600 id_rsa_anf
 # Setup ssh configuration
 
 ```shell
+# Use 'petasky' or 'sbg' depending on your cloud provider
 export CLOUD=petasky
 ./k8s-school/ANF/setup-cfg.sh
 ```
@@ -23,7 +24,7 @@ export CLOUD=petasky
 Get a bash prompt inside docker image with kubectl client:
 
 ```shell
-../run-kubectl.sh
+./k8s-school/run-kubectl.sh
 ```
 
 # Setup k8s cluster
@@ -33,9 +34,6 @@ Get a bash prompt inside docker image with kubectl client:
 # Define k8s-orchestrator
 # replace kube-node-xxx with your k8s master hostname
 export ORCHESTRATOR=kube-node-xxx
-
-# Change owner on ssh configuration
-chown root:root -R $HOME/.ssh/
 
 # Log in orchestrator
 ssh $ORCHESTRATOR
