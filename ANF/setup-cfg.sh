@@ -1,7 +1,6 @@
 set -e
 set -x
 
-CLOUD=petasky
 if [ -z "$CLOUD" ]; then
     >&2 echo "ERROR: export CLOUD env variable (values: 'sbg' or 'petasky')"
 fi
