@@ -13,5 +13,5 @@ IMAGE="k8sschool/kubectl:latest"
 
 echo $DIR
 
-docker build --tag "$IMAGE" "$DIR/kubectl"
+docker build --no-cache --tag "$IMAGE" "$DIR/kubectl"
 docker push "$IMAGE"
