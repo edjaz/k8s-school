@@ -71,5 +71,8 @@ kubectl get nodes
 # replace kube-node-yyy with your k8s node hostname
 ssh kube-node-yyy
 sudo kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
-
 ```
+
+# Install k8s dashboard
+
+See https://github.com/kubernetes/dashboard/ to install it, and https://github.com/kubernetes/dashboard/wiki/Access-control#admin-privileges to grant access right
