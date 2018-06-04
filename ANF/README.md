@@ -34,6 +34,9 @@ Get a bash prompt inside docker image with kubectl client:
 # replace kube-node-xxx with your k8s master hostname
 export ORCHESTRATOR=kube-node-xxx
 
+# Change owner on ssh configuration
+chown root:root -R $HOME/.ssh/
+
 # Log in orchestrator
 ssh $ORCHESTRATOR
 
@@ -41,17 +44,31 @@ ssh $ORCHESTRATOR
 # apiserver-cert-extra-sans option is a hack for ssh tunnel
 # Official documentation available at:
 # https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#instructions
-kubeadm init --apiserver-cert-extra-sans=localhost
+sudo kubeadm init --apiserver-cert-extra-sans=localhost
 
-# Install pod network
-kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+# WARN: record join command:
+# example:
+# kubeadm join 192.168.56.249:6443 --token h73o12.7r64fz5k0f92er3j \
+#   --discovery-token-ca-cert-hash \
+#   sha256:f124761234bae63f4806f602a6e6467a10da3c844ff06a4a1c2a7b6ad62dca9d
 
 # Log out orchestrator
 exit
 
+# Copy k8s credential to container
+./scripts/ANF/export-kubeconfig.sh
+# Open ssh tunnel to k8s orchestrator
+./scripts/ANF/ssh-tunnel.sh
+
+# Copy configuration and install pod network
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+
+# Check master is ready
+kubectl get nodes
+
 # Join a node
 # replace kube-node-yyy with your k8s node hostname
 ssh kube-node-yyy
-kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
+sudo kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
 
 ```

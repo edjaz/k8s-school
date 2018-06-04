@@ -5,7 +5,6 @@
 # @author Fabrice Jammes SLAC/IN2P3
 
 set -e
-set -x
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 
@@ -41,6 +40,7 @@ fi
 
 if [ -z "$ORCHESTRATOR" ]; then
     >&2 echo "ERROR: export ORCHESTRATOR env variable"
+    exit 2
 fi
 
 case "$KUBECONFIG" in
