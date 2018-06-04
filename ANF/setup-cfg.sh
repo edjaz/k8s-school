@@ -9,4 +9,5 @@ fi
 DIR=$(cd "$(dirname "$0")"; pwd -P)
 # Create configuration
 mkdir -p ../dot-kube
-cp "$DIR/config.$CLOUD"/* ../dot-kube
+cp "$DIR/config.$CLOUD"/ssh_config ../dot-ssh
+cp "$DIR/config.$CLOUD"/env-infrastructure.sh ../dot-kube

@@ -70,6 +70,6 @@ IMAGE=k8sschool/kubectl
 docker pull "$IMAGE"
 docker run $BASH_OPTS --net=host \
     --rm \
-    --volume "$HOME/.ssh":/root/.ssh \
+    --volume "$DIR/dot-ssh":/root/.ssh \
     --volume "$KUBECONFIG":/root/.kube \
     "$IMAGE" $CMD

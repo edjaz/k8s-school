@@ -2,7 +2,7 @@
 
 https://drive.uca.fr/d/54734d97770640889165/
 
-and copy them to `$HOME/.ssh`
+and copy them to `k8s-school/dot-ssh`
 
 # Setup ssh configuration
 
