@@ -31,13 +31,13 @@ export CLOUD=petasky
 
 Get a bash prompt inside docker image with kubectl client:
 
-## Linux
+* Linux
 
 ```shell
 ./run-kubectl.sh
 ```
 
-## Windows
+* Windows
 
 ```shell
 docker run -it --volume /home/fjammes/src/k8s-school/kubectl/scripts:/root/scripts --net=host --rm --volume /home/fjammes/src/k8s-school/dot-ssh:/root/.ssh --volume /home/fjammes/src/k8s-school/dot-kube:/root/.kube k8sschool/kubectl bash
