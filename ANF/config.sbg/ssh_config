@@ -1,0 +1,745 @@
+Host *
+	ServerAliveInterval 300
+	ServerAliveCountMax 2
+
+Host k8s-node-1
+HostName 172.16.7.23
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-2
+HostName 172.16.7.61
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-3
+HostName 172.16.7.4
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-4
+HostName 172.16.7.55
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-5
+HostName 172.16.7.6
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-6
+HostName 172.16.7.37
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-7
+HostName 172.16.7.10
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-8
+HostName 172.16.7.44
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-9
+HostName 172.16.7.28
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-10
+HostName 172.16.7.50
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-11
+HostName 172.16.7.19
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-12
+HostName 172.16.7.27
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-13
+HostName 172.16.7.67
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-14
+HostName 172.16.7.49
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-15
+HostName 172.16.7.39
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-16
+HostName 172.16.7.52
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-17
+HostName 172.16.7.41
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-18
+HostName 172.16.7.29
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-19
+HostName 172.16.7.46
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-20
+HostName 172.16.7.26
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-21
+HostName 172.16.7.13
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-22
+HostName 172.16.7.31
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-23
+HostName 172.16.7.57
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-24
+HostName 172.16.7.22
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-25
+HostName 172.16.7.51
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-26
+HostName 172.16.7.11
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-27
+HostName 172.16.7.14
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-28
+HostName 172.16.7.35
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-29
+HostName 172.16.7.45
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-30
+HostName 172.16.7.30
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-31
+HostName 172.16.7.21
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-32
+HostName 172.16.7.5
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-33
+HostName 172.16.7.56
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-34
+HostName 172.16.7.32
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-35
+HostName 172.16.7.42
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-36
+HostName 172.16.7.36
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-37
+HostName 172.16.7.63
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-38
+HostName 172.16.7.43
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-39
+HostName 172.16.7.33
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-40
+HostName 172.16.7.40
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-41
+HostName 172.16.7.53
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-42
+HostName 172.16.7.8
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-43
+HostName 172.16.7.34
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-44
+HostName 172.16.7.16
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-45
+HostName 172.16.7.24
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-46
+HostName 172.16.7.12
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-47
+HostName 172.16.7.9
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-48
+HostName 172.16.7.48
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-49
+HostName 172.16.7.38
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-50
+HostName 172.16.7.47
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-51
+HostName 172.16.7.17
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-52
+HostName 172.16.7.2
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-53
+HostName 172.16.7.18
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-node-54
+HostName 172.16.7.25
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-master-1
+HostName 172.16.7.7
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-orchestra-1
+HostName 172.16.7.15
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
+Host k8s-gateway
+HostName 172.16.7.20
+User qserv
+Port 22
+StrictHostKeyChecking no
+UserKnownHostsFile /dev/null
+PasswordAuthentication no
+ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@134.158.151.143
+IdentityFile ~/.ssh/id_rsa_anf
+IdentitiesOnly yes
+LogLevel FATAL
+
+
