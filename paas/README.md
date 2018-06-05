@@ -2,6 +2,8 @@
 
 Create a github account to fork this repository, then clone it:
 ```shell
+mkdir -p $HOME/src
+cd $HOME/src
 git clone https://github.com/<GIT-USER>/k8s-school.git
 ```
 
@@ -21,10 +23,21 @@ cd ..
 
 # Setup ssh configuration
 
+* Linux
+
 ```shell
 # Use 'petasky' or 'sbg' depending on your cloud provider
 export CLOUD=petasky
 ./paas/setup-cfg.sh
+```
+
+* Windows
+
+```shell
+$K8S_SCHOOL_PATH=$HOME/src/k8s-school
+mkdir $K8S_SCHOOL_PATH/dot-ssh
+mkdir $K8S_SCHOOL_PATH/dot-kube
+cp $K8S_SCHOOL_PATH/config.<CLOUD-NAME>/ssh_config $K8S_SCHOOL_PATH/dot-ssh/config
 ```
 
 # Launch kubectl client
