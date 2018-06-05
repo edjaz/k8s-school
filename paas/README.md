@@ -34,10 +34,12 @@ export CLOUD=petasky
 * Windows
 
 ```shell
-$K8S_SCHOOL_PATH=$HOME/src/k8s-school
+$K8S_SCHOOL_PATH = "$HOME/src/k8s-school"
 mkdir $K8S_SCHOOL_PATH/dot-ssh
 mkdir $K8S_SCHOOL_PATH/dot-kube
-cp $K8S_SCHOOL_PATH/config.<CLOUD-NAME>/ssh_config $K8S_SCHOOL_PATH/dot-ssh/config
+# Define cloud to "petasky" on "sbg"
+$CLOUD="petasky"
+cp $K8S_SCHOOL_PATH/paas/config.$CLOUD/ssh_config $K8S_SCHOOL_PATH/dot-ssh/config
 ```
 
 # Launch kubectl client
