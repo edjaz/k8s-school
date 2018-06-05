@@ -40,7 +40,9 @@ Get a bash prompt inside docker image with kubectl client:
 * Windows
 
 ```shell
-docker run -it --volume /home/fjammes/src/k8s-school/kubectl/scripts:/root/scripts --net=host --rm --volume /home/fjammes/src/k8s-school/dot-ssh:/root/.ssh --volume /home/fjammes/src/k8s-school/dot-kube:/root/.kube k8sschool/kubectl bash
+powershell
+$K8S_SCHOOL_PATH=$HOME/src/k8s-school/
+docker run -it --volume $K8S_SCHOOL_PATH/kubectl/scripts:/root/scripts --net=host --rm --volume $K8S_SCHOOL_PATH/dot-ssh:/root/.ssh --volume $K8S_SCHOOL_PATH/dot-kube:/root/.kube k8sschool/kubectl bash
 ```
 
 # Setup k8s cluster
