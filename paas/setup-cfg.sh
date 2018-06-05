@@ -1,8 +1,8 @@
 set -e
-set -x
 
 if [ -z "$CLOUD" ]; then
     >&2 echo "ERROR: export CLOUD env variable (values: 'sbg' or 'petasky')"
+    exit 2
 fi
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)

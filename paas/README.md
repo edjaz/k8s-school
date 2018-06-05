@@ -24,7 +24,7 @@ cd ..
 ```shell
 # Use 'petasky' or 'sbg' depending on your cloud provider
 export CLOUD=petasky
-./ANF/setup-cfg.sh
+./paas/setup-cfg.sh
 ```
 
 # Launch kubectl client
@@ -65,9 +65,9 @@ sudo kubeadm init --apiserver-cert-extra-sans=localhost
 exit
 
 # Copy k8s credential to container
-./scripts/ANF/export-kubeconfig.sh
+./scripts/paas/export-kubeconfig.sh
 # Open ssh tunnel to k8s orchestrator
-./scripts/ANF/ssh-tunnel.sh
+./scripts/paas/ssh-tunnel.sh
 
 # Copy configuration and install pod network
 kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"

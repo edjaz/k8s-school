@@ -7,6 +7,9 @@
 set -e
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
+
+. "$DIR/env.sh"
+
 if [ -z "$ORCHESTRATOR" ]; then
     >&2 echo "ERROR: export ORCHESTRATOR env variable"
     exit 2
