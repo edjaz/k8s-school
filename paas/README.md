@@ -1,3 +1,9 @@
+# Note for Windows 10 user
+
+We recommand you enable Ubuntu inside Windows10 (Panneau de configuration->Programmes et fonctionnalités->Activer les fonctionnalité de Windows->Choisir 'sous système Linux pour Windows'->Puis installer Ubuntu), and then follow Linux tutorial.
+
+If not possible, then you can try *Windows* instructions below, but we did not fully validate it.
+
 # Fork this repository and clone it
 
 Create a github account to fork this repository, then clone it:
