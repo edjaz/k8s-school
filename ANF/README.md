@@ -32,7 +32,7 @@ export CLOUD=petasky
 Get a bash prompt inside docker image with kubectl client:
 
 ```shell
-./k8s-school/run-kubectl.sh
+./run-kubectl.sh
 ```
 
 # Setup k8s cluster
