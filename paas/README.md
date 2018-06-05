@@ -41,7 +41,7 @@ Get a bash prompt inside docker image with kubectl client:
 
 ```shell
 powershell
-$K8S_SCHOOL_PATH=$HOME/src/k8s-school/
+$K8S_SCHOOL_PATH=$HOME/src/k8s-school
 docker run -it --volume $K8S_SCHOOL_PATH/kubectl/scripts:/root/scripts --net=host --rm --volume $K8S_SCHOOL_PATH/dot-ssh:/root/.ssh --volume $K8S_SCHOOL_PATH/dot-kube:/root/.kube k8sschool/kubectl bash
 ```
 
