@@ -1,3 +1,10 @@
+# Fork this repository and clone it
+
+Create a github account to fork this repository, then clone it:
+```shell
+git clone https://github.com/<GIT-USER>/k8s-school.git
+```
+
 # Download keys
 
 At https://drive.uca.fr/d/54734d97770640889165/
@@ -9,6 +16,7 @@ mkdir -p k8s-school/dot-ssh
 cd k8s-school/dot-ssh
 # Copy key here
 chmod 600 id_rsa_anf
+cd ..
 ```
 
 # Setup ssh configuration
@@ -16,7 +24,7 @@ chmod 600 id_rsa_anf
 ```shell
 # Use 'petasky' or 'sbg' depending on your cloud provider
 export CLOUD=petasky
-./k8s-school/ANF/setup-cfg.sh
+./ANF/setup-cfg.sh
 ```
 
 # Launch kubectl client
