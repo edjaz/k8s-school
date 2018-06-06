@@ -1,8 +1,6 @@
-# Note for Windows 10 user
+# Note for MacOS
 
-We recommand you enable Ubuntu inside Windows10 (Panneau de configuration->Programmes et fonctionnalités->Activer les fonctionnalité de Windows->Choisir 'sous système Linux pour Windows'->Puis installer Ubuntu), and then follow Linux tutorial.
-
-If not possible, then you can try *Windows* instructions below, but we did not fully validate it.
+It is not possible to run kubectl inside docker on MacOS because of known networking issues. https://docs.docker.com/docker-for-mac/networking/
 
 # Fork this repository and clone it
 
@@ -19,12 +17,22 @@ At https://drive.uca.fr/d/54734d97770640889165/
 
 Then run:
 
+* Linux
+
 ```shell
 mkdir -p k8s-school/dot-ssh
 cd k8s-school/dot-ssh
 # Copy key here
 chmod 600 id_rsa_anf
 cd ..
+```
+
+* MacOS
+
+Copy keys inside `$HOME/.ssh` and
+
+```shell
+chmod 600 $HOME/.ssh/id_rsa_anf
 ```
 
 # Setup ssh configuration
@@ -37,18 +45,16 @@ export CLOUD=petasky
 ./paas/setup-cfg.sh
 ```
 
-* Windows
+* MacOS
 
 ```shell
-$K8S_SCHOOL_PATH = "$HOME/src/k8s-school"
-mkdir $K8S_SCHOOL_PATH/dot-ssh
-mkdir $K8S_SCHOOL_PATH/dot-kube
-# Define cloud to "petasky" on "sbg"
-$CLOUD="petasky"
-cp $K8S_SCHOOL_PATH/paas/config.$CLOUD/ssh_config $K8S_SCHOOL_PATH/dot-ssh/config
+# Use 'petasky' or 'sbg' depending on your cloud provider
+export CLOUD=petasky
+# WARN backup any existing $HOME/.ssh/config first!!!
+cp ./paas/config.$CLOUD/ssh_config $HOME/.ssh/config
 ```
 
-# Launch kubectl client
+# Set up kubectl client
 
 Get a bash prompt inside docker image with kubectl client:
 
@@ -58,23 +64,22 @@ Get a bash prompt inside docker image with kubectl client:
 ./run-kubectl.sh
 ```
 
-* Windows
-
+* MacOS
 ```shell
-powershell
-$K8S_SCHOOL_PATH=$HOME/src/k8s-school
-docker run -it --volume $K8S_SCHOOL_PATH/kubectl/scripts:/root/scripts --net=host --rm --volume $K8S_SCHOOL_PATH/dot-ssh:/root/.ssh --volume $K8S_SCHOOL_PATH/dot-kube:/root/.kube k8sschool/kubectl bash
+brew install kubectl
+cd kubectl
 ```
 
 # Setup k8s cluster
 
 ```shell
-# Inside kubectl docker image
+# Linux only: Inside kubectl docker image
+
 # Define k8s-orchestrator
 # replace kube-node-xxx with your k8s master hostname
 export ORCHESTRATOR=kube-node-xxx
 
-# Grant access to ssh keys
+# Linux only: Grant access to ssh keys
 chown -R root:root $HOME/.ssh
 
 # Log in orchestrator
@@ -96,6 +101,7 @@ sudo kubeadm init --apiserver-cert-extra-sans=localhost
 exit
 
 # Copy k8s credential to container
+# MacOS only: WARN backup any existing $HOME/.kube/config first!!!
 ./scripts/paas/export-kubeconfig.sh
 # Open ssh tunnel to k8s orchestrator
 ./scripts/paas/ssh-tunnel.sh
@@ -110,6 +116,11 @@ kubectl get nodes
 # replace kube-node-yyy with your k8s node hostname
 ssh kube-node-yyy
 sudo kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
+```
+
+* MacOS
+
+```shell
 ```
 
 # Install k8s dashboard
