@@ -23,6 +23,9 @@ helm init --service-account tiller --upgrade
 helm repo add coreos https://s3-eu-west-1.amazonaws.com/coreos-charts/stable/
 helm install coreos/prometheus-operator --name prometheus-operator --namespace monitoring
 helm install coreos/kube-prometheus --name kube-prometheus --set global.rbacEnable=true --namespace monitoring
+
+# Access via proxy
+kubectl port-forward -n monitoring kube-prometheus-grafana-6c9496d766-f86kp 3000
 ```
 
 Then follow documentation:
@@ -39,13 +42,4 @@ gcloud config set project MYPROJECT
 gcloud compute firewall-rules create prometheus --allow tcp:30902
 # Get public IPs of the nodes
 gcloud compute instances list
-```
-
-### Via Ingress (WIP)
-
-```shell
-helm del --purge kube-prometheus
-helm install coreos/kube-prometheus --name kube-prometheus --set grafana.service.type=NodePort,grafana.ingress.enabled=true --namespace monitoring
-# Wait a little bit and get public address of the grafana service
-kubectl get ingress --namespace=monitoring
 ```
