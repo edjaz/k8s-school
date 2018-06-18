@@ -25,6 +25,7 @@ sudo vim /etc/group
 
 # Install dind cluster
 wget https://cdn.rawgit.com/Mirantis/kubeadm-dind-cluster/master/fixed/dind-cluster-v1.9.sh
+# wget https://cdn.rawgit.com/kubernetes-sigs/kubeadm-dind-cluster/master/fixed/dind-cluster-v1.8.sh
 chmod +x dind-cluster-v1.9.sh
 ./dind-cluster-v1.9.sh up
 
