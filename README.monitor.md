@@ -7,7 +7,7 @@ k8s monitoring
 
 Read https://github.com/fjammes/k8s-school/blob/master/README.gce.md for installing on GCE/GKE
 
-See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/docs/KOPSonAWS.md
+See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/
 
 ```
 # On workstation
