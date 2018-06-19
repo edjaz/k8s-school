@@ -13,7 +13,7 @@ git clone https://github.com/<GIT-USER>/k8s-school.git
 
 # Download keys
 
-At https://drive.uca.fr/d/54734d97770640889165/
+At https://drive.uca.fr/d/dd85ea0cb80a4d1eaf85/
 
 Then run:
 
