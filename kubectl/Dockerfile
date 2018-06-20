@@ -39,6 +39,13 @@ RUN wget -O /usr/local/bin/kubectl \
     https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl && \
     chmod +x /usr/local/bin/kubectl
 
+# Install kubeval
+ENV KUBEVAL_VERSION 0.7.1
+RUN wget https://github.com/garethr/kubeval/releases/download/${KUBEVAL_VERSION}/kubeval-linux-amd64.tar.gz && \
+    tar xf kubeval-linux-amd64.tar.gz && \
+    mv kubeval /usr/local/bin && \
+    rm kubeval-linux-amd64.tar.gz
+
 WORKDIR /root
 
 # Install kubectl completion
