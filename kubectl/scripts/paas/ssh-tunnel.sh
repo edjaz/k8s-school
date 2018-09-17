@@ -11,7 +11,7 @@ DIR=$(cd "$(dirname "$0")"; pwd -P)
 . "$DIR/env.sh"
 
 if [ -z "$ORCHESTRATOR" ]; then
-    >&2 echo "ERROR: export ORCHESTRATOR env variable"
+    >&2 echo "ERROR: export ORCHESTRATOR env variable (edit $DIR/env.sh)"
     exit 2
 fi
 

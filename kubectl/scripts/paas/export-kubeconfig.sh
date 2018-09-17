@@ -23,7 +23,6 @@ Available options:
 
 EOD
 }
-set -x
 
 # Get the options
 while getopts hK: c ; do
@@ -41,7 +40,7 @@ if [ $# -ne 0 ] ; then
 fi
 
 if [ -z "$ORCHESTRATOR" ]; then
-    >&2 echo "ERROR: export ORCHESTRATOR env variable"
+    >&2 echo "ERROR: export ORCHESTRATOR env variable (edit $DIR/env.sh)"
     exit 2
 fi
 

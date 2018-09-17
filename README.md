@@ -28,6 +28,10 @@ wget https://cdn.rawgit.com/kubernetes-sigs/kubeadm-dind-cluster/master/fixed/di
 chmod +x dind-cluster-v1.9.sh
 ./dind-cluster-v1.9.sh up
 
+# Test directly on host
+export PATH="$HOME/.kubeadm-dind-cluster:$PATH"
+kubectl get nodes
+
 # Get configuration file from dind cluster
 docker cp kube-master:/etc/kubernetes/admin.conf  ~/src/k8s-school/dot-kube/dindconfig
 ln -sf ~/src/k8s-school/dot-kube/dindconfig ~/src/k8s-school/dot-kube/config
