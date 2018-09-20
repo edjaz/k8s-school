@@ -5,14 +5,12 @@ k8s monitoring
 
 ## Installation procedure
 
-Read https://github.com/fjammes/k8s-school/blob/master/README.gce.md for installing on GCE/GKE
-
 See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/
 
 ```
 # On workstation
-WORKDIR=kubectl/scripts/prometheus-operator-temp
-git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git $WORKDIR;
+cd <path_to_repos>/k8s-school/kubectl/scripts/
+git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git
 
 # In kubectl container
 cd scripts/prometheus-operator-temp/contrib/kube-prometheus/
