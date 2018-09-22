@@ -9,7 +9,7 @@ git clone https://github.com/<GIT-USER>/k8s-school.git
 
 # Download keys
 
-At https://drive.uca.fr/d/dd85ea0cb80a4d1eaf85/
+At https://drive.google.com/open?id=18Z6sQCwfe0LAzFtloC1AjhYPmpRgNyHZ 
 
 Then run:
 
@@ -18,8 +18,8 @@ Then run:
 ```shell
 mkdir -p k8s-school/dot-ssh
 cd k8s-school/dot-ssh
-# Copy key here
-chmod 600 id_rsa_anf
+# Move keys here
+chmod 600 id_rsa_sch
 cd ..
 ```
 
