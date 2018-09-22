@@ -14,9 +14,11 @@ At https://drive.google.com/open?id=18Z6sQCwfe0LAzFtloC1AjhYPmpRgNyHZ
 Then run:
 
 ```shell
-mkdir -p k8s-school/dot-ssh
-cd k8s-school/dot-ssh
+cd k8s-school
+mkdir -p dot-ssh
+cd dot-ssh
 # Move keys here
+cp ~/Downloads/id_rsa_sch* .
 chmod 600 id_rsa_sch
 cd ..
 ```
@@ -42,7 +44,7 @@ Get a bash prompt inside docker image with kubectl client:
 
 # Define k8s-orchestrator
 # replace kube-node-xxx with your k8s master hostname
-export ORCHESTRATOR=kube-node-xxx
+export ORCHESTRATOR=sch-worker-xx
 
 # Linux only: Grant access to ssh keys
 chown -R root:root $HOME/.ssh
