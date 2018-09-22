@@ -83,8 +83,25 @@ kubectl get nodes
 
 # Join a node
 # replace kube-node-yyy with your k8s node hostname
-ssh kube-node-yyy
+ssh sch-worker-y
 sudo kubeadm join --token <token> <master-ip>:<master-port> --discovery-token-ca-cert-hash sha256:<hash>
+# Log out node 
+exit
+
+# Check cluster status
+kubectl get nodes 
+# Output:
+# NAME            STATUS    ROLES     AGE       VERSION
+# sch-worker-19   Ready     master    9m        v1.10.3
+# sch-worker-20   Ready     <none>    1m        v1.10.3
+
+kubectl get componentstatuses
+# Output:
+# NAME                 STATUS    MESSAGE              ERROR
+# scheduler            Healthy   ok                   
+# controller-manager   Healthy   ok                   
+# etcd-0               Healthy   {"health": "true"}
+ 
 ```
 
 # Install k8s dashboard
