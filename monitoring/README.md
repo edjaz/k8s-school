@@ -12,7 +12,7 @@ See https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prome
 cd <path_to_repos>/k8s-school/kubectl/scripts/
 git clone --single-branch --depth=1 -b master https://github.com/coreos/prometheus-operator.git
 
-And then see Quickstart:
+And then, in kubectl container,  follow quickstart instructions:
 https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus#quickstart
 ```
 

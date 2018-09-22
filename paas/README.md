@@ -13,8 +13,6 @@ At https://drive.google.com/open?id=18Z6sQCwfe0LAzFtloC1AjhYPmpRgNyHZ
 
 Then run:
 
-* Linux
-
 ```shell
 mkdir -p k8s-school/dot-ssh
 cd k8s-school/dot-ssh
@@ -25,8 +23,6 @@ cd ..
 
 # Setup ssh configuration
 
-* Linux
-
 ```shell
 ./paas/setup-cfg.sh
 ```
@@ -34,8 +30,6 @@ cd ..
 # Set up kubectl client
 
 Get a bash prompt inside docker image with kubectl client:
-
-* Linux
 
 ```shell
 ./run-kubectl.sh
