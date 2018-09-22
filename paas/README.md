@@ -40,11 +40,13 @@ Get a bash prompt inside docker image with kubectl client:
 # Setup k8s cluster
 
 ```shell
-# WARN: Inside kubectl docker image
+# WARN WARN -- Inside kubectl docker image -- WARN WARN
 
 # Define k8s-orchestrator
-# replace kube-node-xxx with your k8s master hostname
-export ORCHESTRATOR=sch-worker-xx
+# replace CHANGEME with your k8s master hostname
+vi /root/scripts/paas/env.sh 
+# Set you orchestrator here
+# export ORCHESTRATOR="sch-worker-x"
 
 # Linux only: Grant access to ssh keys
 chown -R root:root $HOME/.ssh
@@ -58,7 +60,7 @@ ssh $ORCHESTRATOR
 # https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/#instructions
 sudo kubeadm init --apiserver-cert-extra-sans=localhost
 
-# WARN: record join command:
+# WARN WARN -- RECORD JOIN COMMAND -- WARN WARN
 # example:
 # kubeadm join 192.168.56.249:6443 --token h73o12.7r64fz5k0f92er3j \
 #   --discovery-token-ca-cert-hash \

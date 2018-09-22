@@ -1,2 +1,2 @@
 # Set you orchestrator here
-export ORCHESTRATOR="${ORCHESTRATOR-}"
+export ORCHESTRATOR="CHANGEME"
