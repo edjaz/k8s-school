@@ -62,4 +62,4 @@ https://github.com/kubernetes/examples/blob/master/README.md
 
 ## Install Prometheus
 
-See [here](./README.monitor.md)
+See [here](./monitoring)
