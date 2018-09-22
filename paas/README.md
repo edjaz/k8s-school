@@ -1,7 +1,3 @@
-# Note for MacOS
-
-It is not possible to run kubectl inside docker on MacOS because of known networking issues. https://docs.docker.com/docker-for-mac/networking/
-
 # Fork this repository and clone it
 
 Create a github account to fork this repository, then clone it:
@@ -27,31 +23,12 @@ chmod 600 id_rsa_anf
 cd ..
 ```
 
-* MacOS
-
-Copy keys inside `$HOME/.ssh` and
-
-```shell
-chmod 600 $HOME/.ssh/id_rsa_anf
-```
-
 # Setup ssh configuration
 
 * Linux
 
 ```shell
-# Use 'petasky' or 'sbg' depending on your cloud provider
-export CLOUD=petasky
 ./paas/setup-cfg.sh
-```
-
-* MacOS
-
-```shell
-# Use 'petasky' or 'sbg' depending on your cloud provider
-export CLOUD=petasky
-# WARN backup any existing $HOME/.ssh/config first!!!
-cp ./paas/config.$CLOUD/ssh_config $HOME/.ssh/config
 ```
 
 # Set up kubectl client
@@ -64,16 +41,10 @@ Get a bash prompt inside docker image with kubectl client:
 ./run-kubectl.sh
 ```
 
-* MacOS
-```shell
-brew install kubectl
-cd kubectl
-```
-
 # Setup k8s cluster
 
 ```shell
-# Linux only: Inside kubectl docker image
+# WARN: Inside kubectl docker image
 
 # Define k8s-orchestrator
 # replace kube-node-xxx with your k8s master hostname

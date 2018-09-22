@@ -1,11 +1,9 @@
 set -e
 
-if [ -z "$CLOUD" ]; then
-    >&2 echo "ERROR: export CLOUD env variable (values: 'sbg' or 'petasky')"
-    exit 2
-fi
+CLOUD=petasky
 
 DIR=$(cd "$(dirname "$0")"; pwd -P)
+
 # Create configuration
 SSH_CFG="$DIR/../dot-ssh"
 KUBE_CFG="$DIR/../dot-kube"

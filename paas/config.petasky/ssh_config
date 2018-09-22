@@ -2,197 +2,67 @@ Host *
 	ServerAliveInterval 300
 	ServerAliveCountMax 2
 
-Host kube-node-1
-HostName 192.168.56.22
+Host fjlaptop-worker-1
+HostName 192.168.56.69
 User qserv
 Port 22
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
+ProxyCommand ssh -i ~/.ssh/id_rsa_openstack -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.175
+IdentityFile ~/.ssh/id_rsa_openstack
 IdentitiesOnly yes
 LogLevel FATAL
 
 
-Host kube-node-2
-HostName 192.168.56.217
+Host fjlaptop-worker-2
+HostName 192.168.56.70
 User qserv
 Port 22
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
+ProxyCommand ssh -i ~/.ssh/id_rsa_openstack -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.175
+IdentityFile ~/.ssh/id_rsa_openstack
 IdentitiesOnly yes
 LogLevel FATAL
 
 
-Host kube-node-3
-HostName 192.168.56.222
+Host fjlaptop-master-1
+HostName 192.168.56.68
 User qserv
 Port 22
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
+ProxyCommand ssh -i ~/.ssh/id_rsa_openstack -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.175
+IdentityFile ~/.ssh/id_rsa_openstack
 IdentitiesOnly yes
 LogLevel FATAL
 
 
-Host kube-node-4
-HostName 192.168.56.229
+Host fjlaptop-orchestra-1
+HostName 192.168.56.71
 User qserv
 Port 22
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
+ProxyCommand ssh -i ~/.ssh/id_rsa_openstack -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.175
+IdentityFile ~/.ssh/id_rsa_openstack
 IdentitiesOnly yes
 LogLevel FATAL
 
 
-Host kube-node-5
-HostName 192.168.56.228
+Host fjlaptop-gateway
+HostName 192.168.56.7
 User qserv
 Port 22
 StrictHostKeyChecking no
 UserKnownHostsFile /dev/null
 PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-6
-HostName 192.168.56.220
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-7
-HostName 192.168.56.226
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-8
-HostName 192.168.56.225
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-9
-HostName 192.168.56.216
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-10
-HostName 192.168.56.218
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-11
-HostName 192.168.56.227
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-node-12
-HostName 192.168.56.214
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-master-1
-HostName 192.168.56.224
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-orchestra-1
-HostName 192.168.56.223
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
-IdentitiesOnly yes
-LogLevel FATAL
-
-
-Host kube-gateway
-HostName 192.168.56.221
-User qserv
-Port 22
-StrictHostKeyChecking no
-UserKnownHostsFile /dev/null
-PasswordAuthentication no
-ProxyCommand ssh -i ~/.ssh/id_rsa_anf -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.174
-IdentityFile ~/.ssh/id_rsa_anf
+ProxyCommand ssh -i ~/.ssh/id_rsa_openstack -q -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -W %h:%p qserv@193.55.95.175
+IdentityFile ~/.ssh/id_rsa_openstack
 IdentitiesOnly yes
 LogLevel FATAL
 
